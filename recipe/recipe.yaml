@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: toil
-  version: "9.5.0"
+  version: "9.6.0"
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: dae9a12b0f277355170129be38406c831da47054758e64d6693e18d7e5b45d3f
+  sha256: 5469d45e06e65d6ffadfc22918952460f80da4611ec5318a5de62b6192db2f16
   patches:
     - 0001-Avoid-AssertionError-Could-not-determine-AWS-availab.patch
     - 0002-work-around-missing-stubserver.patch
@@ -20,7 +20,7 @@ source:
     - 0005-Missing-needs_docker.patch
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: |
     sed -i "s/python = 'python3.*'/python = 'python3'/g" src/toil/version.py
